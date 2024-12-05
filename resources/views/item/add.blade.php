@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', '商品登録')
+@section('title', '出荷物登録')
 
 @section('content_header')
-    <h1>商品登録</h1>
+    <h1>出荷物登録</h1>
 @stop
 
 @section('content')
@@ -24,18 +24,28 @@
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="name">名前</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="名前">
+                            <label for="name">品目名</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="品目名">
                         </div>
 
                         <div class="form-group">
-                            <label for="type">種別</label>
-                            <input type="text" class="form-control" id="type" name="type" placeholder="種別">
+                            <label for="type">出荷先</label>
+                            <input type="text" class="form-control" id="type" name="type" placeholder="出荷先">
+                        </div>                        
+
+                        <div class="form-group">
+                            <label for="detail">収穫圃場</label>
+                            <input type="text" class="form-control" id="detail" name="detail" placeholder="収穫圃場">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="StartDate">収穫開始日</label>
+                            <input type="text" class="form-control" id="StartDate" name="StartDate" placeholder="開始日">
                         </div>
 
                         <div class="form-group">
-                            <label for="detail">詳細</label>
-                            <input type="text" class="form-control" id="detail" name="detail" placeholder="詳細説明">
+                            <label for="ScheduledEndDate">収穫終了予定日</label>
+                            <input type="text" class="form-control" id="ScheduledEndDate" name="ScheduledEndDate" placeholder="終了予定日">
                         </div>
                     </div>
 

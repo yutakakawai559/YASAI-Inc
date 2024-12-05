@@ -25,9 +25,11 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>名前</th>
-                                <th>種別</th>
-                                <th>詳細</th>
+                                <th>品目名</th>
+                                <th>出荷先</th>
+                                <th>収穫圃場</th>
+                                <th>収穫開始日</th>
+                                <th>収穫終了予定日</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -37,6 +39,8 @@
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->type }}</td>
                                     <td>{{ $item->detail }}</td>
+                                    <td>{{ $item->StartDate }}</td>
+                                    <td>{{ $item->ScheduledEndDate }}</td>
                                 </tr>
                             @endforeach
                         </tbody>

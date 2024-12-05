@@ -47,6 +47,8 @@ class ItemController extends Controller
                 'name' => $request->name,
                 'type' => $request->type,
                 'detail' => $request->detail,
+                'StartDate' => $request->StartDate,
+                'ScheduledEndDate' => $request->ScheduledEndDate
             ]);
 
             return redirect('/items');
