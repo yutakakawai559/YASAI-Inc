@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', '商品一覧')
+@section('title', 'ユーザー一覧')
 
 @section('content_header')
-    <h1>商品一覧</h1>
+    <h1>ユーザー一覧</h1>
 @stop
 
 @section('content')
@@ -11,11 +11,12 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">商品一覧</h3>
+                    <h3 class="card-title">ユーザー一覧</h3>
                     <div class="card-tools">
                         <div class="input-group input-group-sm">
                             <div class="input-group-append">
-                                <a href="{{ url('items/users') }}" class="btn btn-default">ユーザー一覧</a>
+                                <a href="{{ url('items/edit') }}" class="btn btn-default">ユーザー編集</a>
+                                <a href="{{ url('register') }}" class="btn btn-default">ユーザー登録</a>
                                 <a href="{{ url('items/add') }}" class="btn btn-default">商品登録</a>
                             </div>
                         </div>
@@ -26,11 +27,12 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>品目名</th>
-                                <th>出荷先</th>
-                                <th>収穫圃場</th>
-                                <th>収穫開始日</th>
-                                <th>収穫終了予定日</th>
+                                <th>名前</th>
+                                <th>メールアドレス</th>
+                                <th>天候</th>
+                                <th>気温</th>
+                                <th>出荷</th>
+                                <th>防除</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -38,10 +40,11 @@
                                 <tr>
                                     <td>{{ $item->id }}</td>
                                     <td>{{ $item->name }}</td>
-                                    <td>{{ $item->type }}</td>
-                                    <td>{{ $item->detail }}</td>
-                                    <td>{{ $item->StartDay }}</td>
-                                    <td>{{ $item->ScheduledEndDay }}</td>
+                                    <td>{{ $item->email }}</td>
+                                    <td>{{ $item->alert_climate }}</td>
+                                    <td>{{ $item->alert_temperature }}</td>
+                                    <td>{{ $item->alert_shipping }}</td>
+                                    <td>{{ $item->alert_pesticide }}</td>
                                 </tr>
                             @endforeach
                         </tbody>

@@ -16,6 +16,8 @@ class Item extends Model
         'name',
         'type',
         'detail',
+        'StartDay',
+        'ScheduledEndDay',
     ];
 
     /**
@@ -33,4 +35,8 @@ class Item extends Model
      */
     protected $casts = [
     ];
+
+    protected $guarded = ['id'];
+    protected $dates = ['display_date'];
+    
 }

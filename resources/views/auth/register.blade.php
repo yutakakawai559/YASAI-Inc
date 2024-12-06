@@ -60,6 +60,23 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+                        
+                        <div class="checkboxes">
+                            通知：
+                            <input type="hidden" name="alert_climate" id="alert1" value="0" >
+                            <input type="checkbox" name="alert_climate" id="alert1" value="1">
+                            <label for="alert1">天候</label>
+                            <input type="hidden" name="alert_temperature" id="alert2" value="0">
+                            <input type="checkbox" name="alert_temperature" id="alert2" value="2">
+                            <label for="alert2">気温</label>
+                            <input type="hidden" name="alert_shipping" id="alert3" value="0">
+                            <input type="checkbox" name="alert_shipping" id="alert3" value="3">
+                            <label for="alert3">出荷</label>
+                            <input type="hidden" name="alert_pesticide" id="alert4" value="0">
+                            <input type="checkbox" name="alert_pesticide" id="alert4" value="4">
+                            <label for="alert4">防除</label>
+                        </div>
+                        
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">

@@ -40,12 +40,12 @@
                         
                         <div class="form-group">
                             <label for="StartDate">収穫開始日</label>
-                            <input type="text" class="form-control" id="StartDate" name="StartDate" placeholder="開始日">
+                            <input type="date" class="form-control" id="StartDate" name="StartDate" placeholder="開始日">
                         </div>
 
                         <div class="form-group">
                             <label for="ScheduledEndDate">収穫終了予定日</label>
-                            <input type="text" class="form-control" id="ScheduledEndDate" name="ScheduledEndDate" placeholder="終了予定日">
+                            <input type="date" class="form-control" id="ScheduledEndDate" name="ScheduledEndDate" placeholder="終了予定日">
                         </div>
                     </div>
 

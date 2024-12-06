@@ -21,6 +21,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'alert_climate',
+        'alert_temperature',
+        'alert_shipping',
+        'alert_pesticide'
     ];
 
     /**

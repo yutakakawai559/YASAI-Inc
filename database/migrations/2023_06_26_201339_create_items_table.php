@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('name', 100)->index();
             $table->string('type', 100)->nullable();
             $table->string('detail', 500)->nullable();
-            $table->string('StartDay', 100)->date();
-            $table->string('ScheduledEndDay',100)->date();
+            $table->date('StartDay', 100)->nullable();
+            $table->date('ScheduledEndDay',100)->nullable();
             $table->timestamps();
         });
     }
