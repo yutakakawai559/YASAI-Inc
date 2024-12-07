@@ -30,6 +30,6 @@ Route::prefix('items')->group(function () {
     Route::get('/', [App\Http\Controllers\ItemController::class, 'index']);
     Route::get('/add', [App\Http\Controllers\ItemController::class, 'add']);
     Route::post('/add', [App\Http\Controllers\ItemController::class, 'add']);
-    Route::get('item/users', [App\Http\Controllers\UsersController::class, 'index']);
-    Route::post('item/users', [App\Http\Controllers\UsersController::class, 'index']);
+    Route::get('/users', [App\Http\Controllers\UsersController::class, 'index']);
+    Route::post('/users', [App\Http\Controllers\UsersController::class, 'index']);
 });

@@ -21,7 +21,7 @@ class UsersController extends Controller
     {
         //会員一覧取得
         $users = User::all();
-        return view('user.index', compact('item/users'));
+        return view('item.user.index', compact('users'));
 
     }
 }

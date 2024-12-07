@@ -36,15 +36,15 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($items as $item)
+                            @foreach ($users as $user)
                                 <tr>
-                                    <td>{{ $item->id }}</td>
-                                    <td>{{ $item->name }}</td>
-                                    <td>{{ $item->email }}</td>
-                                    <td>{{ $item->alert_climate }}</td>
-                                    <td>{{ $item->alert_temperature }}</td>
-                                    <td>{{ $item->alert_shipping }}</td>
-                                    <td>{{ $item->alert_pesticide }}</td>
+                                    <td>{{ $user->id }}</td>
+                                    <td>{{ $user->name }}</td>
+                                    <td>{{ $user->email }}</td>
+                                    <td>{{ $user->alert_climate }}</td>
+                                    <td>{{ $user->alert_temperature }}</td>
+                                    <td>{{ $user->alert_shipping }}</td>
+                                    <td>{{ $user->alert_pesticide }}</td>
                                 </tr>
                             @endforeach
                         </tbody>
