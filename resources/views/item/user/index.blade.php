@@ -15,9 +15,10 @@
                     <div class="card-tools">
                         <div class="input-group input-group-sm">
                             <div class="input-group-append">
-                                <a href="{{ url('items/edit') }}" class="btn btn-default">ユーザー編集</a>
-                                <a href="{{ url('register') }}" class="btn btn-default">ユーザー登録</a>
-                                <a href="{{ url('items/add') }}" class="btn btn-default">商品登録</a>
+                                <a href="{{ url('items/edit') }}" class="btn btn-primary">ユーザー編集</a>
+                                <a href="{{ route('logout.and.register') }}" class="btn btn-primary">ユーザー新規登録</a>
+                                <a href="{{ url('items/add') }}" class="btn btn-primary">商品登録</a>
+                                <a href="{{ url('items') }}" class="btn btn-primary">商品一覧</a>
                             </div>
                         </div>
                     </div>

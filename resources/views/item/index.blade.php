@@ -15,8 +15,8 @@
                     <div class="card-tools">
                         <div class="input-group input-group-sm">
                             <div class="input-group-append">
-                                <a href="{{ url('items/users') }}" class="btn btn-default">ユーザー一覧</a>
-                                <a href="{{ url('items/add') }}" class="btn btn-default">商品登録</a>
+                                <a href="{{ url('items/users') }}" class="btn btn-primary">ユーザー一覧</a>
+                                <a href="{{ url('items/add') }}" class="btn btn-primary">商品登録</a>
                             </div>
                         </div>
                     </div>

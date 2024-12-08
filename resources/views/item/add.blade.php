@@ -55,6 +55,9 @@
                 </form>
             </div>
         </div>
+        <div class="card-footer">
+            <button type="submit" class="btn btn primary"><a href="{{ url('items') }}">戻る</a></button>
+        </div>
     </div>
 @stop
 
