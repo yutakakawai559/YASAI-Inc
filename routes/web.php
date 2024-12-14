@@ -6,7 +6,8 @@ use Illuminate\Auth\Middleware\Authorize;
 use Illuminate\Support\Facades\Auth;
 use PharIo\Manifest\Author;
 use PharIo\Manifest\AuthorElement;
-use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\ItemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +27,13 @@ use App\Http\Controllers\ArticleController;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/users', [App\Http\Controllers\ArticleController::class, 'index'])->name('resources.views.articles.index');
+Route::get('item/user/edit', [App\Http\Controllers\UsersController::class, 'edit'])->name('resources.views.item.user.edit');
+Route::post('item/user/edit', [App\Http\Controllers\UsersController::class, 'edit'])->name('resources.views.item.user.edit');
+Route::get('item/user/search', [App\Http\Controllers\UsersController::class, 'search'])->name('resources.views.item.user.search');
+Route::post('item/user/search', [App\Http\Controllers\UsersController::class, 'search'])->name('resources.views.item.user.search');
+Route::post('/execute-function', [App\Http\Controllers\ItemController::class, 'executeFunction'])->name('execute.function');
+Route::get('edit', [App\Http\Controllers\UsersController::class, 'showForm'])->name('form.show');
+
 
 Route::prefix('items')->group(function () {
     Route::get('/', [App\Http\Controllers\ItemController::class, 'index']);
@@ -38,4 +45,5 @@ Route::prefix('items')->group(function () {
         Auth::logout(); //ログアウト処理
         return redirect()->route('register'); //ユーザー登録画面にリダイレクト
     })->name('logout.and.register');
+
 });

@@ -23,39 +23,41 @@
                 <form method="POST">
                     @csrf
                     <div class="card-body">
-                        <div class="form-group">
-                            <label for="name">名前</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="名前">
-                        </div>
+                        <form action="#" method="POST">
+                            @csrf
+                                <div class="form-group">
+                                <label for="name">名前</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="{{ $user->name ?? '名前を入力してください'}}">
+                            </div>
 
-                        <div class="form-group">
-                            <label for="email">メールアドレス</label>
-                            <input type="text" class="form-control" id="email" name="email" placeholder="メールアドレス">
-                        </div>                        
+                            <div class="form-group">
+                                <label for="email">メールアドレス</label>
+                                <input type="text" class="form-control" id="email" name="email" placeholder="{{ $user->email ?? 'メールアドレスを入力してください' }}">
+                            </div>                        
 
-                        <div class="form-group">
-                            <label for="password">パスワード</label>
-                            <input type="text" class="form-control" id="password" name="password" placeholder="パスワード">
-                        </div>
-                        
-                        <div class="checkboxes">
-                            通知：
-                            <input type="hidden" name="alert_climate" id="alert1" value="0" >
-                            <input type="checkbox" name="alert_climate" id="alert1" value="1">
-                            <label for="alert1">天候</label>
-                            <input type="hidden" name="alert_temperature" id="alert2" value="0">
-                            <input type="checkbox" name="alert_temperature" id="alert2" value="2">
-                            <label for="alert2">気温</label>
-                            <input type="hidden" name="alert_shipping" id="alert3" value="0">
-                            <input type="checkbox" name="alert_shipping" id="alert3" value="3">
-                            <label for="alert3">出荷</label>
-                            <input type="hidden" name="alert_pesticide" id="alert4" value="0">
-                            <input type="checkbox" name="alert_pesticide" id="alert4" value="4">
-                            <label for="alert4">防除</label>
-                        </div>
-
+                            <div class="form-group">
+                                <label for="password">パスワード</label>
+                                <input type="text" class="form-control" id="password" name="password" placeholder="{{ $user->password ?? 'パスワードを入力してください'}}">
+                            </div>
+                            
+                            <div class="checkboxes">
+                                通知：
+                                <input type="hidden" name="alert_climate" id="alert1" value="0" >
+                                <input type="checkbox" name="alert_climate" id="alert1" value="1">
+                                <label for="alert1">天候</label>
+                                <input type="hidden" name="alert_temperature" id="alert2" value="0">
+                                <input type="checkbox" name="alert_temperature" id="alert2" value="2">
+                                <label for="alert2">気温</label>
+                                <input type="hidden" name="alert_shipping" id="alert3" value="0">
+                                <input type="checkbox" name="alert_shipping" id="alert3" value="3">
+                                <label for="alert3">出荷</label>
+                                <input type="hidden" name="alert_pesticide" id="alert4" value="0">
+                                <input type="checkbox" name="alert_pesticide" id="alert4" value="4">
+                                <label for="alert4">防除</label>
+                            </div>
+                        </form>
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">編集</button>
+                        <button type="submit" class="btn btn-primary"><a href="{{ url('/items/users') }}">編集</a></button>
                     </div>
                 </form>
             </div>

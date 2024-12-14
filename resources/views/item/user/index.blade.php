@@ -15,7 +15,7 @@
                     <div class="card-tools">
                         <div class="input-group input-group-sm">
                             <div class="input-group-append">
-                                <a href="{{ url('items/edit') }}" class="btn btn-primary">ユーザー編集</a>
+                                <a href="{{ url('item/user/search') }}" class="btn btn-primary">ユーザー検索</a>
                                 <a href="{{ route('logout.and.register') }}" class="btn btn-primary">ユーザー新規登録</a>
                                 <a href="{{ url('items/add') }}" class="btn btn-primary">商品登録</a>
                                 <a href="{{ url('items') }}" class="btn btn-primary">商品一覧</a>
@@ -46,6 +46,12 @@
                                     <td>{{ $user->alert_temperature }}</td>
                                     <td>{{ $user->alert_shipping }}</td>
                                     <td>{{ $user->alert_pesticide }}</td>
+                                    <td>
+                                        <form action="{{ route('form.show') }}" method="POST">
+                                            @csrf
+                                            <button type="submit" class="btn btn-primary">編集</button>
+                                        </form>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
