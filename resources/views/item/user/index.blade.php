@@ -34,6 +34,7 @@
                                 <th>気温</th>
                                 <th>出荷</th>
                                 <th>防除</th>
+                                <th>編集・削除</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -50,6 +51,14 @@
                                         <form action="{{ route('form.show') }}" method="POST">
                                             @csrf
                                             <button type="submit" class="btn btn-primary">編集</button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <form action="{{ url('items/delete') }}" method="POST">
+                                            onsubmit="return confirm('削除します。よろしいですか？');"
+                                            @csrf
+                                            <input type="hidden" name="id" value="{{ item->id }}">
+                                            <input type="submit" value="削除" class="btn btn-danger">
                                         </form>
                                     </td>
                                 </tr>

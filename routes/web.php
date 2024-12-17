@@ -45,5 +45,5 @@ Route::prefix('items')->group(function () {
         Auth::logout(); //ログアウト処理
         return redirect()->route('register'); //ユーザー登録画面にリダイレクト
     })->name('logout.and.register');
-
+    Route::post('/delete', [\App\Http\Controllers\ItemController::class, 'delete']);
 });
