@@ -61,7 +61,7 @@
                             </div>
                         </div>
                         
-                        <div class="checkboxes">
+                        <div class="checkboxes" style="align-items: center;">
                             通知：
                             <input type="hidden" name="alert_climate" id="alert1" value="0" >
                             <input type="checkbox" name="alert_climate" id="alert1" value="1">

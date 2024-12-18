@@ -48,17 +48,10 @@
                                     <td>{{ $user->alert_shipping }}</td>
                                     <td>{{ $user->alert_pesticide }}</td>
                                     <td>
-                                        <form action="{{ route('form.show') }}" method="POST">
+                                        <form action="{{ route('item.edit',['id' => $user->id]) }}" method="POST" onsubmit="return confirm('ユーザー編集画面に移動します。よろしいですか？')">
                                             @csrf
-                                            <button type="submit" class="btn btn-primary">編集</button>
-                                        </form>
-                                    </td>
-                                    <td>
-                                        <form action="{{ url('items/delete') }}" method="POST">
-                                            onsubmit="return confirm('削除します。よろしいですか？');"
-                                            @csrf
-                                            <input type="hidden" name="id" value="{{ item->id }}">
-                                            <input type="submit" value="削除" class="btn btn-danger">
+                                            <input type="hidden" name="id" value="{{ $user->id }}">
+                                            <input type="submit" value="編集" class="btn btn-primary">
                                         </form>
                                     </td>
                                 </tr>

@@ -27,23 +27,23 @@ use App\Http\Controllers\ItemController;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('item/user/edit', [App\Http\Controllers\UsersController::class, 'edit'])->name('resources.views.item.user.edit');
-Route::post('item/user/edit', [App\Http\Controllers\UsersController::class, 'edit'])->name('resources.views.item.user.edit');
+Route::post('item/user/edit', [App\Http\Controllers\UsersController::class, 'item/user/edit'])->name('resources.views.item.user.edit');
 Route::get('item/user/search', [App\Http\Controllers\UsersController::class, 'search'])->name('resources.views.item.user.search');
 Route::post('item/user/search', [App\Http\Controllers\UsersController::class, 'search'])->name('resources.views.item.user.search');
 Route::post('/execute-function', [App\Http\Controllers\ItemController::class, 'executeFunction'])->name('execute.function');
-Route::get('edit', [App\Http\Controllers\UsersController::class, 'showForm'])->name('form.show');
-
 
 Route::prefix('items')->group(function () {
     Route::get('/', [App\Http\Controllers\ItemController::class, 'index']);
     Route::get('/add', [App\Http\Controllers\ItemController::class, 'add']);
     Route::post('/add', [App\Http\Controllers\ItemController::class, 'add']);
-    Route::get('/users', [App\Http\Controllers\UsersController::class, 'index']);
+    Route::get('/users', [App\Http\Controllers\UsersController::class, 'index'])->name('user.index');
     Route::post('/users', [App\Http\Controllers\UsersController::class, 'index']);
     Route::get('/logout-and-register', function(){
         Auth::logout(); //ログアウト処理
         return redirect()->route('register'); //ユーザー登録画面にリダイレクト
     })->name('logout.and.register');
     Route::post('/delete', [\App\Http\Controllers\ItemController::class, 'delete']);
+    Route::post('/edit', [App\Http\Controllers\ItemController::class, 'edit']);
+    Route::post('item/{id}/edit', [App\Http\Controllers\UsersController::class, 'edit'])->name('item.edit');
+    Route::put('/users/{id}', [\App\Http\Controllers\UsersController::class, 'update'])->name('users.update');
 });

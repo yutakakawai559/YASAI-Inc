@@ -25,23 +25,25 @@ class UsersController extends Controller
 
     }
 
-        //会員編集
-    public function edit(Request $request)
+        //会員編集画面
+    public function edit(Request $request, $id)
     {   
-        
-        return view('item.user.edit');
+        $user = User::findOrFail($id);
+        return view('item.edit',['user' => $user]);
     }
 
-    public function executeFunction(Request $request)
+        //placeholder背景事前入力
+    public function holder(Request $request)
     {
-        //関数のロジック
-        return response()->json(['message' => 'Function executed successfully!']);
+
     }
 
-    public function showForm()
+        //会員編集機能
+    public function update(Request $request, $id)
     {
-        //データベースから情報を取得　例：ユーザーモデルから名前を取得
-        $user = User::find(['id']);
-        return view('my-form', ['user' => $user]);
+     $user = User::findOrFail($id);
+     $user->update($request->only(['name', 'email']));
+    return redirect()->route('user.index')->with('success', 'ユーザー情報が更新されました');
     }
+
 }

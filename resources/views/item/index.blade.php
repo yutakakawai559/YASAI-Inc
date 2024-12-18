@@ -31,6 +31,7 @@
                                 <th>収穫圃場</th>
                                 <th>収穫開始日</th>
                                 <th>収穫終了予定日</th>
+                                <th>削除</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -42,6 +43,13 @@
                                     <td>{{ $item->detail }}</td>
                                     <td>{{ $item->StartDay }}</td>
                                     <td>{{ $item->ScheduledEndDay }}</td>
+                                    <td>
+                                        <form action="{{ url('items/delete') }}" method="POST" onsubmit="return confirm('削除します。よろしいですか？');">
+                                            @csrf
+                                            <input type="hidden" name="id" value="{{ $item->id }}">
+                                            <input type="submit" value="削除" class="btn btn-danger">
+                                        </form>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

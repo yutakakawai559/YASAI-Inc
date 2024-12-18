@@ -20,27 +20,21 @@
             @endif
 
             <div class="card card-primary">
-                <form method="POST">
-                    @csrf
                     <div class="card-body">
-                        <form action="#" method="POST">
+                        <form action="{{ route('users.update', ['id' => $user->id]) }}" method="POST">
                             @csrf
+                            @method('PUT')
                                 <div class="form-group">
                                 <label for="name">名前</label>
-                                <input type="text" class="form-control" id="name" name="name" placeholder="{{ $user->name ?? '名前を入力してください'}}">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="{{ $user->name}}" value="{{ $user->name }}">
                             </div>
 
                             <div class="form-group">
                                 <label for="email">メールアドレス</label>
-                                <input type="text" class="form-control" id="email" name="email" placeholder="{{ $user->email ?? 'メールアドレスを入力してください' }}">
+                                <input type="text" class="form-control" id="email" name="email" placeholder="{{ $user->email }}" value="{{ $user->email }}">
                             </div>                        
 
-                            <div class="form-group">
-                                <label for="password">パスワード</label>
-                                <input type="text" class="form-control" id="password" name="password" placeholder="{{ $user->password ?? 'パスワードを入力してください'}}">
-                            </div>
-                            
-                            <div class="checkboxes">
+                            <div class="checkboxes" style="align-items: center;">
                                 通知：
                                 <input type="hidden" name="alert_climate" id="alert1" value="0" >
                                 <input type="checkbox" name="alert_climate" id="alert1" value="1">
@@ -55,11 +49,9 @@
                                 <input type="checkbox" name="alert_pesticide" id="alert4" value="4">
                                 <label for="alert4">防除</label>
                             </div>
+                            <button type="submit" class="btn btn-warning">更新</button>
                         </form>
-                    <div class="card-footer">
-                        <button type="submit" class="btn btn-primary"><a href="{{ url('/items/users') }}">編集</a></button>
                     </div>
-                </form>
             </div>
         </div>
     </div>
