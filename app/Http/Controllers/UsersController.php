@@ -44,7 +44,7 @@ class UsersController extends Controller
     public function update(Request $request, $id)
     {
      $user = User::findOrFail($id);
-     $user->update($request->only(['name', 'email']));
+     $user->update($request->only(['name', 'email','alert_climate', 'alert_temperature', 'alert_shipping', 'alert_pesticide' ]));
     return redirect()->route('user.index')->with('success', 'ユーザー情報が更新されました');
     }
 

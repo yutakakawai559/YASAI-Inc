@@ -49,7 +49,7 @@
                                 <input type="checkbox" name="alert_pesticide" id="alert4" value="4">
                                 <label for="alert4">防除</label>
                             </div>
-                            <button type="submit" class="btn btn-warning">更新</button>
+                            <button type="submit" class="btn btn-warning">編集</button>
                         </form>
                     </div>
             </div>
