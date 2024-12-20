@@ -62,7 +62,7 @@
                         </div>
                         
                         <div class="checkboxes" style="align-items: center;">
-                            通知：
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">通知：</label>
                             <input type="hidden" name="alert_climate" id="alert1" value="0" >
                             <input type="checkbox" name="alert_climate" id="alert1" value="1">
                             <label for="alert1">天候</label>

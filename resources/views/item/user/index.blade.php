@@ -15,7 +15,6 @@
                     <div class="card-tools">
                         <div class="input-group input-group-sm">
                             <div class="input-group-append">
-                                <a href="{{ url('item/user/search') }}" class="btn btn-primary">ユーザー検索</a>
                                 <a href="{{ route('logout.and.register') }}" class="btn btn-primary">ユーザー新規登録</a>
                                 <a href="{{ url('items/add') }}" class="btn btn-primary">商品登録</a>
                                 <a href="{{ url('items') }}" class="btn btn-primary">商品一覧</a>
@@ -48,10 +47,15 @@
                                     <td>{{ $user->alert_shipping }}</td>
                                     <td>{{ $user->alert_pesticide }}</td>
                                     <td>
-                                        <form action="{{ route('item.edit',['id' => $user->id]) }}" method="POST" onsubmit="return confirm('ユーザー編集画面に移動します。よろしいですか？')">
+                                        <form action="{{ route('item.edit', ['id' => $user->id]) }}" method="POST" onsubmit="return confirm('ユーザー編集画面に移動します。よろしいですか？')">
                                             @csrf
                                             <input type="hidden" name="id" value="{{ $user->id }}">
-                                            <input type="submit" value="編集" class="btn btn-primary">
+                                            <input type="submit" value="編集" class="btn btn-warning">
+                                        </form>
+                                        <form action="{{ route('users.delete') }}" method="POST" onsubmit="return confirm('削除します。よろしいですか？');">
+                                            @csrf
+                                            <input type="hidden" name="id" value="{{ $user->id }}">
+                                            <input type="submit" value="削除" class="btn btn-danger">
                                         </form>
                                     </td>
                                 </tr>

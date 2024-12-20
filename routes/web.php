@@ -8,6 +8,7 @@ use PharIo\Manifest\Author;
 use PharIo\Manifest\AuthorElement;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\ItemController;
+use Faker\Guesser\Name;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +44,7 @@ Route::prefix('items')->group(function () {
         return redirect()->route('register'); //ユーザー登録画面にリダイレクト
     })->name('logout.and.register');
     Route::post('/delete', [\App\Http\Controllers\ItemController::class, 'delete']);
+    Route::post('/users/delete', [\App\Http\Controllers\UsersController::class, 'delete'])->name('users.delete');
     Route::post('/edit', [App\Http\Controllers\ItemController::class, 'edit']);
     Route::post('item/{id}/edit', [App\Http\Controllers\UsersController::class, 'edit'])->name('item.edit');
     Route::put('/users/{id}', [\App\Http\Controllers\UsersController::class, 'update'])->name('users.update');

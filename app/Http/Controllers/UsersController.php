@@ -32,11 +32,13 @@ class UsersController extends Controller
         return view('item.edit',['user' => $user]);
     }
 
-        //placeholder背景事前入力
-    public function holder(Request $request)
-    {
-
-    }
+        //会員削除機能
+    public function delete(Request $request)
+        {
+            $user = User::find($request->id);
+            $user->delete();
+            return redirect('items/users');
+        }
 
         //会員編集機能
     public function update(Request $request, $id)
